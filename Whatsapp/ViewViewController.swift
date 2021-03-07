@@ -1,8 +1,8 @@
 //
-//  PageViewController.swift
+//  ViewViewController.swift
 //  Whatsapp
 //
-//  Created by Apps2t on 15/02/2021.
+//  Created by user176708 on 2/27/21.
 //  Copyright © 2021 alumnos. All rights reserved.
 //
 
@@ -10,21 +10,22 @@ import Foundation
 import UIKit
 import SwiftUI
 
-class PageViewController: UIViewController{
+class ViewViewController: UIViewController{
     
     private var pageController: UIPageViewController?
     var currentIndex: Int = 0
+    var time: String = ""
     
     var vistas: [UIViewController]?
     
-    //pagina de logica de navigation drawer
-    //maneja las paginas principales estando logueado
+    //maneja la logica de la navegacion con gestos por pantalla
+    //logica de login y registro
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        vistas = [UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CollectionVC"),
-        UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CrearContactoVC")]
+        vistas = [UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "login"),
+        UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "register")]
         setupPageController()
     }
     
@@ -48,7 +49,7 @@ class PageViewController: UIViewController{
     }
 }
 
-extension PageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+extension ViewViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return vistas!.count
@@ -88,5 +89,3 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
     
 
 }
-
-

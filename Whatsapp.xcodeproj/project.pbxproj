@@ -3,33 +3,57 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EA27B7AA7C56032167529E4 /* Pods_Whatsapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94B60CE4B0CF1D9230DBEC4D /* Pods_Whatsapp.framework */; };
 		339A5A1525DB018D00333ADE /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A5A1425DB018D00333ADE /* PageViewController.swift */; };
-		339A5A1725DB032300333ADE /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A5A1625DB032300333ADE /* ImageViewController.swift */; };
-		339A5A1925DB048E00333ADE /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A5A1825DB048E00333ADE /* VideoPlayerViewController.swift */; };
+		339A5A1725DB032300333ADE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A5A1625DB032300333ADE /* TableViewController.swift */; };
+		339A5A1925DB048E00333ADE /* CrearContactoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A5A1825DB048E00333ADE /* CrearContactoViewController.swift */; };
 		7F20690D25D5A73200121268 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F20690C25D5A73200121268 /* AppDelegate.swift */; };
 		7F20690F25D5A73200121268 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F20690E25D5A73200121268 /* SceneDelegate.swift */; };
-		7F20691125D5A73200121268 /* VoiceRecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F20691025D5A73200121268 /* VoiceRecorderViewController.swift */; };
 		7F20691425D5A73200121268 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F20691225D5A73200121268 /* Main.storyboard */; };
 		7F20691625D5A73400121268 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F20691525D5A73400121268 /* Assets.xcassets */; };
 		7F20691925D5A73400121268 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F20691725D5A73400121268 /* LaunchScreen.storyboard */; };
+		D834AC7425F3BB8D007F9C29 /* LoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834AC7325F3BB8D007F9C29 /* LoginUser.swift */; };
+		D83F34A925EACA1900FA943A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83F34A825EACA1900FA943A /* LoginViewController.swift */; };
+		D83F34AD25EACB1B00FA943A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83F34AC25EACB1B00FA943A /* RegisterViewController.swift */; };
+		D83F34B125EACD1400FA943A /* ViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83F34B025EACD1400FA943A /* ViewViewController.swift */; };
+		D842D6B425F23E75008C1BFC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842D6B325F23E75008C1BFC /* NetworkManager.swift */; };
+		D842D6B825F243B6008C1BFC /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842D6B725F243B6008C1BFC /* Register.swift */; };
+		D842D6BD25F258BD008C1BFC /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D842D6BC25F258BD008C1BFC /* LoginButton.swift */; };
+		D84AA52625F4E57700D0DDF2 /* StaffTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84AA52525F4E57700D0DDF2 /* StaffTableViewCell.swift */; };
+		D84AA52D25F4E66D00D0DDF2 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84AA52C25F4E66D00D0DDF2 /* Contact.swift */; };
+		D84AA53425F5137200D0DDF2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84AA53325F5137200D0DDF2 /* DetailViewController.swift */; };
+		D84AA54025F543DF00D0DDF2 /* ForgotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84AA53F25F543DF00D0DDF2 /* ForgotViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27794D721A28FC104F826191 /* Pods-Whatsapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whatsapp.release.xcconfig"; path = "Target Support Files/Pods-Whatsapp/Pods-Whatsapp.release.xcconfig"; sourceTree = "<group>"; };
 		339A5A1425DB018D00333ADE /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		339A5A1625DB032300333ADE /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
-		339A5A1825DB048E00333ADE /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
+		339A5A1625DB032300333ADE /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		339A5A1825DB048E00333ADE /* CrearContactoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrearContactoViewController.swift; sourceTree = "<group>"; };
 		7F20690925D5A73200121268 /* Whatsapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whatsapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F20690C25D5A73200121268 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F20690E25D5A73200121268 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7F20691025D5A73200121268 /* VoiceRecorderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecorderViewController.swift; sourceTree = "<group>"; };
 		7F20691325D5A73200121268 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F20691525D5A73400121268 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F20691825D5A73400121268 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F20691A25D5A73400121268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94B60CE4B0CF1D9230DBEC4D /* Pods_Whatsapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whatsapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FA541B83156AD980161FF96 /* Pods-Whatsapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whatsapp.debug.xcconfig"; path = "Target Support Files/Pods-Whatsapp/Pods-Whatsapp.debug.xcconfig"; sourceTree = "<group>"; };
+		D834AC7325F3BB8D007F9C29 /* LoginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUser.swift; sourceTree = "<group>"; };
+		D83F34A825EACA1900FA943A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D83F34AC25EACB1B00FA943A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D83F34B025EACD1400FA943A /* ViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewViewController.swift; sourceTree = "<group>"; };
+		D842D6B325F23E75008C1BFC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D842D6B725F243B6008C1BFC /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		D842D6BC25F258BD008C1BFC /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		D84AA52525F4E57700D0DDF2 /* StaffTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffTableViewCell.swift; sourceTree = "<group>"; };
+		D84AA52C25F4E66D00D0DDF2 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		D84AA53325F5137200D0DDF2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D84AA53F25F543DF00D0DDF2 /* ForgotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EA27B7AA7C56032167529E4 /* Pods_Whatsapp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +73,8 @@
 			children = (
 				7F20690B25D5A73200121268 /* Whatsapp */,
 				7F20690A25D5A73200121268 /* Products */,
+				CED5B8C53BF51CE4EE70CCB2 /* Pods */,
+				8D371554659C7D3CC402BD3A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,16 +91,43 @@
 			children = (
 				7F20690C25D5A73200121268 /* AppDelegate.swift */,
 				7F20690E25D5A73200121268 /* SceneDelegate.swift */,
+				D842D6B325F23E75008C1BFC /* NetworkManager.swift */,
 				339A5A1425DB018D00333ADE /* PageViewController.swift */,
-				339A5A1625DB032300333ADE /* ImageViewController.swift */,
-				7F20691025D5A73200121268 /* VoiceRecorderViewController.swift */,
-				339A5A1825DB048E00333ADE /* VideoPlayerViewController.swift */,
+				339A5A1625DB032300333ADE /* TableViewController.swift */,
+				D83F34A825EACA1900FA943A /* LoginViewController.swift */,
+				D842D6B725F243B6008C1BFC /* Register.swift */,
+				D84AA53325F5137200D0DDF2 /* DetailViewController.swift */,
+				D83F34AC25EACB1B00FA943A /* RegisterViewController.swift */,
+				D83F34B025EACD1400FA943A /* ViewViewController.swift */,
+				339A5A1825DB048E00333ADE /* CrearContactoViewController.swift */,
 				7F20691225D5A73200121268 /* Main.storyboard */,
 				7F20691525D5A73400121268 /* Assets.xcassets */,
 				7F20691725D5A73400121268 /* LaunchScreen.storyboard */,
 				7F20691A25D5A73400121268 /* Info.plist */,
+				D842D6BC25F258BD008C1BFC /* LoginButton.swift */,
+				D834AC7325F3BB8D007F9C29 /* LoginUser.swift */,
+				D84AA52525F4E57700D0DDF2 /* StaffTableViewCell.swift */,
+				D84AA52C25F4E66D00D0DDF2 /* Contact.swift */,
+				D84AA53F25F543DF00D0DDF2 /* ForgotViewController.swift */,
 			);
 			path = Whatsapp;
+			sourceTree = "<group>";
+		};
+		8D371554659C7D3CC402BD3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94B60CE4B0CF1D9230DBEC4D /* Pods_Whatsapp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CED5B8C53BF51CE4EE70CCB2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9FA541B83156AD980161FF96 /* Pods-Whatsapp.debug.xcconfig */,
+				27794D721A28FC104F826191 /* Pods-Whatsapp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +137,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F20691D25D5A73400121268 /* Build configuration list for PBXNativeTarget "Whatsapp" */;
 			buildPhases = (
+				D9B5E9E606D401E1BDDA5F14 /* [CP] Check Pods Manifest.lock */,
 				7F20690525D5A73200121268 /* Sources */,
 				7F20690625D5A73200121268 /* Frameworks */,
 				7F20690725D5A73200121268 /* Resources */,
+				DA99E84D2CB2D8CA852DC104 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -142,15 +198,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D9B5E9E606D401E1BDDA5F14 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Whatsapp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA99E84D2CB2D8CA852DC104 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Whatsapp/Pods-Whatsapp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Whatsapp/Pods-Whatsapp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Whatsapp/Pods-Whatsapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7F20690525D5A73200121268 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F20691125D5A73200121268 /* VoiceRecorderViewController.swift in Sources */,
+				D842D6BD25F258BD008C1BFC /* LoginButton.swift in Sources */,
+				D83F34A925EACA1900FA943A /* LoginViewController.swift in Sources */,
+				D842D6B825F243B6008C1BFC /* Register.swift in Sources */,
+				D842D6B425F23E75008C1BFC /* NetworkManager.swift in Sources */,
 				7F20690D25D5A73200121268 /* AppDelegate.swift in Sources */,
-				339A5A1725DB032300333ADE /* ImageViewController.swift in Sources */,
-				339A5A1925DB048E00333ADE /* VideoPlayerViewController.swift in Sources */,
+				D84AA54025F543DF00D0DDF2 /* ForgotViewController.swift in Sources */,
+				D83F34B125EACD1400FA943A /* ViewViewController.swift in Sources */,
+				D84AA52D25F4E66D00D0DDF2 /* Contact.swift in Sources */,
+				D84AA52625F4E57700D0DDF2 /* StaffTableViewCell.swift in Sources */,
+				D83F34AD25EACB1B00FA943A /* RegisterViewController.swift in Sources */,
+				339A5A1725DB032300333ADE /* TableViewController.swift in Sources */,
+				339A5A1925DB048E00333ADE /* CrearContactoViewController.swift in Sources */,
+				D834AC7425F3BB8D007F9C29 /* LoginUser.swift in Sources */,
+				D84AA53425F5137200D0DDF2 /* DetailViewController.swift in Sources */,
 				7F20690F25D5A73200121268 /* SceneDelegate.swift in Sources */,
 				339A5A1525DB018D00333ADE /* PageViewController.swift in Sources */,
 			);
@@ -294,6 +402,7 @@
 		};
 		7F20691E25D5A73400121268 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FA541B83156AD980161FF96 /* Pods-Whatsapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -311,6 +420,7 @@
 		};
 		7F20691F25D5A73400121268 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27794D721A28FC104F826191 /* Pods-Whatsapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
