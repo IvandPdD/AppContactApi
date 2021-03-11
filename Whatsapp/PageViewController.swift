@@ -24,7 +24,8 @@ class PageViewController: UIViewController{
         super.viewDidLoad()
         
         vistas = [UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CollectionVC"),
-        UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CrearContactoVC")]
+        UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CrearContactoVC"),
+        UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserVC")]
         setupPageController()
     }
     
@@ -64,25 +65,23 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
         var index = self.vistas!.firstIndex(of: viewController)!
         currentIndex = self.vistas!.firstIndex(of: viewController)!
         if (index <= 0){
-            return self.vistas?.last
+            return nil
         } else {
-            index -= 1
+            return self.vistas?[index-1]
         }
         
-        return self.vistas![index]
         //return UIViewController()
     }
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         var index = self.vistas!.firstIndex(of: viewController)!
         currentIndex = self.vistas!.firstIndex(of: viewController)!
-        if (index >= 1){
-            return self.vistas?.first
+        if (index == (self.vistas!.count-1)){
+            return nil
         } else {
-            index += 1
+            return self.vistas?[index+1]
         }
         
-        return self.vistas![index]
         //return UIViewController()
     }
     

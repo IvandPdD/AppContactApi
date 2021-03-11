@@ -27,6 +27,8 @@
 		D84AA52D25F4E66D00D0DDF2 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84AA52C25F4E66D00D0DDF2 /* Contact.swift */; };
 		D84AA53425F5137200D0DDF2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84AA53325F5137200D0DDF2 /* DetailViewController.swift */; };
 		D84AA54025F543DF00D0DDF2 /* ForgotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84AA53F25F543DF00D0DDF2 /* ForgotViewController.swift */; };
+		D8DF454D25F6B4D600F7ED4F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DF454C25F6B4D600F7ED4F /* User.swift */; };
+		D8DF455025F6B6FF00F7ED4F /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DF454F25F6B6FF00F7ED4F /* UserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		D84AA52C25F4E66D00D0DDF2 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		D84AA53325F5137200D0DDF2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D84AA53F25F543DF00D0DDF2 /* ForgotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotViewController.swift; sourceTree = "<group>"; };
+		D8DF454C25F6B4D600F7ED4F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D8DF454F25F6B6FF00F7ED4F /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				D84AA52525F4E57700D0DDF2 /* StaffTableViewCell.swift */,
 				D84AA52C25F4E66D00D0DDF2 /* Contact.swift */,
 				D84AA53F25F543DF00D0DDF2 /* ForgotViewController.swift */,
+				D8DF454C25F6B4D600F7ED4F /* User.swift */,
+				D8DF454F25F6B6FF00F7ED4F /* UserViewController.swift */,
 			);
 			path = Whatsapp;
 			sourceTree = "<group>";
@@ -246,12 +252,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D842D6BD25F258BD008C1BFC /* LoginButton.swift in Sources */,
+				D8DF455025F6B6FF00F7ED4F /* UserViewController.swift in Sources */,
 				D83F34A925EACA1900FA943A /* LoginViewController.swift in Sources */,
 				D842D6B825F243B6008C1BFC /* Register.swift in Sources */,
 				D842D6B425F23E75008C1BFC /* NetworkManager.swift in Sources */,
 				7F20690D25D5A73200121268 /* AppDelegate.swift in Sources */,
 				D84AA54025F543DF00D0DDF2 /* ForgotViewController.swift in Sources */,
 				D83F34B125EACD1400FA943A /* ViewViewController.swift in Sources */,
+				D8DF454D25F6B4D600F7ED4F /* User.swift in Sources */,
 				D84AA52D25F4E66D00D0DDF2 /* Contact.swift in Sources */,
 				D84AA52625F4E57700D0DDF2 /* StaffTableViewCell.swift in Sources */,
 				D83F34AD25EACB1B00FA943A /* RegisterViewController.swift in Sources */,

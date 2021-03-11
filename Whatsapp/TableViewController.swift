@@ -16,6 +16,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var names: [ContactElement] = []
     @IBOutlet weak var tableView: UITableView!
+
     
     override func viewWillAppear(_ animated: Bool) {
         //recargar tabla cada vez para mantener datos actualizados
@@ -28,6 +29,9 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tableView.dataSource = self
         getJson()
         
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -48,8 +52,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //devolvemos numero de filas
-        var returned = self.names.count
-        return returned
+        return self.names.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

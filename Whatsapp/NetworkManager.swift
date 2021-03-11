@@ -238,6 +238,61 @@ class NetworkManager{
         }
     }
     
+    func deleteUser(id: String,completionHandler: @escaping(Bool)->Void){
+        
+        struct Delete: Encodable {
+                    
+                    let id: String
+                }
+        
+        let string_id = String(id)
+                
+        //alamcenamos la URL de la api en una varianle
+        let url = URL(string: "https://conctactappservice.herokuapp.com/api/eraseUser")!
+                
+        //preparamos las variables a enviar
+        let login: [String:Any] = ["id": id]
+                
+        print(login)
+                
+        //las transformamos en JSON
+        let jsonLogin = try? JSONSerialization.data(
+            withJSONObject: login,
+            options: [])
+                
+        //llamamos a la request, dandole la url
+        var request = URLRequest(url: url)
+                
+        //se le indica el protocolo con el que se envia
+        request.httpMethod = "POST"
+                
+        //se le indica el contenido del body
+        request.httpBody = jsonLogin
+                
+        //el header
+        request.headers = ["Content-Type": "application/json",
+                           "Authorization":"Bearer" + self.token]
+                
+        //se envia la peticion usando alamofire
+        AF.request(request).validate().responseJSON()
+            { response in
+            
+            debugPrint(response)
+            
+            let defaults = UserDefaults.standard
+            
+            if(response.error == nil){
+                
+               completionHandler(true)
+                
+            }else {
+                
+                completionHandler(false)
+                
+            }
+        }
+    }
+    
     func forgot(email: String,completionHandler: @escaping(Bool)->Void){
         
         struct forgot: Encodable {
@@ -342,6 +397,47 @@ class NetworkManager{
             }else {
                 
                 completionHandler(false)
+                
+            }
+        }
+    }
+    
+    func getUser(completionHandler: @escaping(UserDTO?)->Void){
+        
+                
+        //alamcenamos la URL de la api en una varianle
+        let url = URL(string: "https://conctactappservice.herokuapp.com/api/user")!
+                
+        //llamamos a la request, dandole la url
+        var request = URLRequest(url: url)
+                
+        //se le indica el protocolo con el que se envia
+        request.httpMethod = "GET"
+                
+        //el header
+        request.headers = ["Content-Type": "application/json",
+                           "Authorization":"Bearer" + self.token]
+                
+        //se envia la peticion usando alamofire
+        AF.request(request).validate().responseJSON()
+        { response in
+            
+            debugPrint(response)
+            
+            let defaults = UserDefaults.standard
+            
+            if(response.error == nil){
+                do{
+                let user = try JSONDecoder().decode(UserDTO.self , from: response.data!)
+                
+                completionHandler(user)
+                    
+                }catch{
+                    
+                }
+            }else {
+                
+                completionHandler(nil)
                 
             }
         }

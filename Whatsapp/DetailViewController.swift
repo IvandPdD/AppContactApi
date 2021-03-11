@@ -82,7 +82,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         
         let id = defaults.string(forKey: "id")!
         
-        let respuesta = NetworkManager.shared.modify(id: id, contact_name: (contact_name?.text)!, contact_email: (contact_email?.text)!, contact_phone: (contact_phone?.text)!,completionHandler: {
+        NetworkManager.shared.modify(id: id, contact_name: (contact_name?.text)!, contact_email: (contact_email?.text)!, contact_phone: (contact_phone?.text)!,completionHandler: {
             success in
             if success{
                 self.performSegue(withIdentifier: "modify", sender: PageViewController.self)
