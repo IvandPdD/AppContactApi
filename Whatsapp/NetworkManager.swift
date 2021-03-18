@@ -108,19 +108,30 @@ class NetworkManager{
         request.headers = ["Content-Type": "application/json"]
                 
         //se envia la peticion usando alamofire
-        AF.request(request).responseDecodable(of: LoginUser.self)
+        AF.request(request).responseJSON()
             { response in
-            guard let loginResponse = response.value else {return}
             
-            let defaults = UserDefaults.standard
+            debugPrint(response)
             
             if(response.error == nil){
-                debugPrint(loginResponse.token)
                 
-                self.token = loginResponse.token
+                do{
+                let user = try JSONDecoder().decode(LoginUser.self , from: response.data!)
+                    
+                    debugPrint(user.token)
+                    
+                    self.token = user.token
+                    
+                    let defaults = UserDefaults.standard
+                    
+                    defaults.set(user.token, forKey: "token")
+                    
                 
-                defaults.setValue(self.token, forKey: "token")
                 completionHandler(true)
+                    
+                }catch{
+                    
+                }
                 
             }else{
                 completionHandler(false)

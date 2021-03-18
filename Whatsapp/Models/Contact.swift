@@ -32,4 +32,3 @@ struct ContactElement: Codable {
         return self.contactEmail
     }
 }
-typealias Contact = [ContactElement]

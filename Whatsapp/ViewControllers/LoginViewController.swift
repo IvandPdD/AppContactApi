@@ -13,9 +13,7 @@ class LoginViewController: UIViewController{
     
     @IBOutlet weak var boxEmail: UITextField!
         
-        
     @IBOutlet weak var boxPassword: UITextField!
-        
         
     @IBOutlet weak var buttonLogin: UIButton!
         

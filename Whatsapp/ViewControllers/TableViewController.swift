@@ -14,7 +14,7 @@ import SwiftyJSON
 
 class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var names: [ContactElement] = []
+    var contacts: [ContactElement] = []
     @IBOutlet weak var tableView: UITableView!
 
     
@@ -27,7 +27,6 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        getJson()
         
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -37,29 +36,30 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         //logica seleccion de celda
         let defaults = UserDefaults.standard
-        let data_name = self.names[indexPath.row].contactName
-        let data_phone = self.names[indexPath.row].contactPhone
-        let data_email = self.names[indexPath.row].contactEmail
-        let id = self.names[indexPath.row].id
+        let data_name = self.contacts[indexPath.row].contactName
+        let data_phone = self.contacts[indexPath.row].contactPhone
+        let data_email = self.contacts[indexPath.row].contactEmail
+        let id = self.contacts[indexPath.row].id
         defaults.setValue(data_name, forKey: "rowName")
         defaults.setValue(data_email, forKey: "rowEmail")
         defaults.setValue(data_phone, forKey: "rowPhone")
         defaults.setValue(id, forKey: "id")
 
         self.performSegue(withIdentifier: "showContact", sender: DetailViewController.self)
-        print(self.names[indexPath.row].id)
+        debugPrint(self.contacts[indexPath.row].id)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //devolvemos numero de filas
-        return self.names.count
+        return self.contacts.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //declaramos celdas
         
         let cell : StaffTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell") as! StaffTableViewCell
-        let contact = names[indexPath.row]
+        let contact = contacts[indexPath.row]
         cell.labelName.text = contact.getName()
         cell.labelEmail.text  = contact.getEmail()
         cell.labelPhone.text = String(contact.getPhone())
@@ -91,29 +91,25 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             guard let contactResponse = response.value else {return}
             debugPrint(contactResponse)
             print("Tabla")
-            
-            self.names = contactResponse
                 
                 if(response.error == nil){
                     //bucle for para iterr elementos
-                    for contactName in contactResponse{
+                    DispatchQueue.global().sync {
                         
-                        for i in 0..<contactResponse.count{
-                            //los introducimos enla tabla
-                        self.names.append(contactResponse[i])
-                        self.tableView.reloadData()
-                            
+                        if(contactResponse.isEmpty){
+                            let alert = UIAlertController(title: "Contactos", message: "DNo hay contactos que mostrar", preferredStyle: .alert)
+                                
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                                    
+                            self.present(alert, animated: true, completion: nil)
+
+                        }else{
+                            self.contacts.append(contentsOf: contactResponse)
+                                
+                                //los introducimos enla tabla
+                            self.tableView.reloadData()
                         }
                     }
-                    if(contactResponse.isEmpty){
-                        let alert = UIAlertController(title: "Contactos", message: "DNo hay contactos que mostrar", preferredStyle: .alert)
-                            
-                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                                
-                        self.present(alert, animated: true, completion: nil)
-
-                    }
-                    
                     
                 }else{
                     
