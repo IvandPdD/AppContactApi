@@ -58,18 +58,19 @@ class NetworkManager{
             
             //se envia la peticion usando alamofire
             //utilizamos el completion handler para sincronizar peticiones
-            AF.request(request).response  { response in
-                guard let registerResponse = response.value else {return}
+        AF.request(request).validate().response  { response in
                 
-                debugPrint(response.value)
                 
-                let defaults = UserDefaults.standard
+                debugPrint(response)
                 
-                if(response.error == nil){
-                    completionHandler(true)
-                }else {
-                    completionHandler(false)
+                DispatchQueue.global().sync(){
+                    if(response.error == nil){
+                        completionHandler(true)
+                    }else {
+                        completionHandler(false)
+                    }
                 }
+                
             }
             
         }
@@ -108,33 +109,36 @@ class NetworkManager{
         request.headers = ["Content-Type": "application/json"]
                 
         //se envia la peticion usando alamofire
-        AF.request(request).responseJSON()
+        AF.request(request).validate().response()
             { response in
             
             debugPrint(response)
             
-            if(response.error == nil){
-                
-                do{
-                let user = try JSONDecoder().decode(LoginUser.self , from: response.data!)
+            DispatchQueue.global().sync {
+                if(response.error == nil){
                     
-                    debugPrint(user.token)
+                    do{
+                    let user = try JSONDecoder().decode(LoginUser.self , from: response.data!)
+                        
+                        debugPrint(user.token)
+                        
+                        
+                        self.token = user.token
+                        
+                        let defaults = UserDefaults.standard
+                        
+                        defaults.set(user.token, forKey: "token")
+                        
                     
-                    self.token = user.token
+                    completionHandler(true)
+                        
+                    }catch{
+                        
+                    }
                     
-                    let defaults = UserDefaults.standard
-                    
-                    defaults.set(user.token, forKey: "token")
-                    
-                
-                completionHandler(true)
-                    
-                }catch{
-                    
+                }else{
+                    completionHandler(false)
                 }
-                
-            }else{
-                completionHandler(false)
             }
         }
     }
@@ -169,15 +173,12 @@ class NetworkManager{
             //se le indica el contenido del body
             request.httpBody = jsonContact
         
-            let defaults = UserDefaults.standard
-            let data = defaults.object(forKey: "token")
-        
             //el header
             request.headers = ["Content-Type": "application/json",
                                "Authorization":"Bearer" + token]
             
             //se envia la peticion usando alamofire
-            AF.request(request).validate().responseJSON  { response in
+            AF.request(request).validate().response { response in
                 
             debugPrint(response)
                 
@@ -200,9 +201,6 @@ class NetworkManager{
                     
                     let id: String
                 }
-        
-        let string_id = String(id)
-                
         //alamcenamos la URL de la api en una varianle
         let url = URL(string: "https://conctactappservice.herokuapp.com/api/eraseContact")!
                 
@@ -230,12 +228,10 @@ class NetworkManager{
                            "Authorization":"Bearer" + self.token]
                 
         //se envia la peticion usando alamofire
-        AF.request(request).validate().responseJSON()
+        AF.request(request).validate().response()
             { response in
             
             debugPrint(response)
-            
-            let defaults = UserDefaults.standard
             
             if(response.error == nil){
                 
@@ -249,27 +245,10 @@ class NetworkManager{
         }
     }
     
-    func deleteUser(id: String,completionHandler: @escaping(Bool)->Void){
+    func deleteUser(completionHandler: @escaping(Bool)->Void){
         
-        struct Delete: Encodable {
-                    
-                    let id: String
-                }
-        
-        let string_id = String(id)
-                
         //alamcenamos la URL de la api en una varianle
         let url = URL(string: "https://conctactappservice.herokuapp.com/api/eraseUser")!
-                
-        //preparamos las variables a enviar
-        let login: [String:Any] = ["id": id]
-                
-        print(login)
-                
-        //las transformamos en JSON
-        let jsonLogin = try? JSONSerialization.data(
-            withJSONObject: login,
-            options: [])
                 
         //llamamos a la request, dandole la url
         var request = URLRequest(url: url)
@@ -277,29 +256,26 @@ class NetworkManager{
         //se le indica el protocolo con el que se envia
         request.httpMethod = "POST"
                 
-        //se le indica el contenido del body
-        request.httpBody = jsonLogin
-                
         //el header
         request.headers = ["Content-Type": "application/json",
                            "Authorization":"Bearer" + self.token]
                 
         //se envia la peticion usando alamofire
-        AF.request(request).validate().responseJSON()
+        AF.request(request).validate().response()
             { response in
             
             debugPrint(response)
             
-            let defaults = UserDefaults.standard
-            
-            if(response.error == nil){
-                
-               completionHandler(true)
-                
-            }else {
-                
-                completionHandler(false)
-                
+            DispatchQueue.global().sync {
+                if(response.error == nil){
+                    
+                   completionHandler(true)
+                    
+                }else {
+                    
+                    completionHandler(false)
+                    
+                }
             }
         }
     }
@@ -336,7 +312,7 @@ class NetworkManager{
         request.headers = ["Content-Type": "application/json"]
                 
         //se envia la peticion usando alamofire
-        AF.request(request).validate().responseJSON()
+        AF.request(request).validate().response()
             { response in
             
             debugPrint(response)
@@ -394,7 +370,7 @@ class NetworkManager{
                            "Authorization":"Bearer" + self.token]
                 
         //se envia la peticion usando alamofire
-        AF.request(request).validate().responseJSON()
+        AF.request(request).validate().response()
             { response in
             
             debugPrint(response)
@@ -414,7 +390,6 @@ class NetworkManager{
     }
     
     func getUser(completionHandler: @escaping(UserDTO?)->Void){
-        
                 
         //alamcenamos la URL de la api en una varianle
         let url = URL(string: "https://conctactappservice.herokuapp.com/api/user")!

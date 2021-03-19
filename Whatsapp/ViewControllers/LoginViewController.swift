@@ -26,6 +26,11 @@ class LoginViewController: UIViewController{
         
         
     @IBAction func login(_ sender: Any){
+        
+        let activityIndicator = UIActivityIndicatorView() // Create the activity indicator
+                view.addSubview(activityIndicator) // add it as a  subview
+        activityIndicator.center = CGPoint(x: view.frame.size.width*0.5, y: view.frame.size.height*0.8) // put in the middle
+                activityIndicator.startAnimating() // Start animating
             
         if (boxEmail == nil || boxPassword == nil ){
                 
@@ -36,12 +41,16 @@ class LoginViewController: UIViewController{
                 
                 if success{
                     
+                    activityIndicator.stopAnimating()
+                    
                     print("login")
                     
                             self.performSegue(withIdentifier: "buttonlogin", sender: PageViewController.self)
                         
                     
                 }else{
+                    
+                    activityIndicator.stopAnimating()
                     
                     let alert = UIAlertController(title: "Login", message: "Datos incorrectos", preferredStyle: .alert)
                         

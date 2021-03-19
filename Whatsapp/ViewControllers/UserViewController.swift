@@ -48,17 +48,26 @@ class UserViewController: UIViewController {
     
     @IBAction func deleteUser(){
         
+        let activityIndicator = UIActivityIndicatorView() // Create the activity indicator
+                view.addSubview(activityIndicator) // add it as a  subview
+                activityIndicator.center = CGPoint(x: view.frame.size.width*0.5, y: view.frame.size.height*0.5) // put in the middle
+                activityIndicator.startAnimating() // Start animating
+        
         let defaults = UserDefaults.standard
         
         let id = defaults.string(forKey: "user_id")
         
-        NetworkManager.shared.deleteUser(id: id!, completionHandler: {
+        NetworkManager.shared.deleteUser(completionHandler: {
             success in
             if success{
+                
+                activityIndicator.stopAnimating()
                 
                 self.performSegue(withIdentifier: "eraseUser", sender: ViewViewController.self)
                 
             }else{
+                
+                activityIndicator.stopAnimating()
                 
                 let alert = UIAlertController(title: "User", message: "La peticion ha fallado", preferredStyle: .alert)
                     

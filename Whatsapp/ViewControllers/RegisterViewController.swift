@@ -28,10 +28,17 @@ class RegisterViewController: UIViewController{
         
         
     @IBAction func Register(_ sender: Any) {
+        
+        let activityIndicator = UIActivityIndicatorView() // Create the activity indicator
+                view.addSubview(activityIndicator) // add it as a  subview
+        activityIndicator.center = CGPoint(x: view.frame.size.width*0.5, y: view.frame.size.height*0.1) // put in the middle
+                activityIndicator.startAnimating() // Start animating
             
         NetworkManager.shared.register(name: boxNameRegister.text!, email: boxEmailRegister.text!, password: boxPasswordRegister.text!, password_confirmation: boxRepPasswordRegister.text!,completionHandler:{
             success in
             if success{
+                
+                activityIndicator.stopAnimating()
                 self.boxNameRegister.text = ""
                 self.boxEmailRegister.text = ""
                 self.boxPasswordRegister.text = ""
@@ -44,6 +51,9 @@ class RegisterViewController: UIViewController{
                         
                 self.present(alert, animated: true, completion: nil)
             } else {
+                
+                activityIndicator.stopAnimating()
+                
                 let alert = UIAlertController(title: "Registro", message: "Ha ocurrido un error, vuelva a intentarlo más tarde", preferredStyle: .alert)
                     
                 alert.addAction(UIAlertAction(title: "Return", style: .default, handler: nil))

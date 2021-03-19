@@ -41,7 +41,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         let data_email = defaults.string(forKey: "rowEmail")
         let data_phone = defaults.string(forKey: "rowPhone")
         let id = defaults.string(forKey: "id")
-        mainLabel?.text = "Contacto: " + data_name!
         contact_name?.text = data_name!
         contact_email?.text = data_email!
         contact_phone?.text = data_phone!

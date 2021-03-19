@@ -21,6 +21,11 @@ class ForgotViewController: UIViewController{
     
     @IBAction func forgot(){
         
+        let activityIndicator = UIActivityIndicatorView() // Create the activity indicator
+                view.addSubview(activityIndicator) // add it as a  subview
+                activityIndicator.center = CGPoint(x: view.frame.size.width*0.5, y: view.frame.size.height*0.75) // put in the middle
+                activityIndicator.startAnimating() // Start animating
+        
         if(boxEmail == nil){
             
             alertEmptyBox()
@@ -30,6 +35,9 @@ class ForgotViewController: UIViewController{
             NetworkManager.shared.forgot(email: boxEmail.text!, completionHandler: {
                 success in
                 if success{
+                    self.boxEmail.text = nil
+                    
+                    activityIndicator.stopAnimating()
                     
                     let alert = UIAlertController(title: "Forgot", message: "Han enviado un email a su correo", preferredStyle: .alert)
                         
@@ -38,6 +46,8 @@ class ForgotViewController: UIViewController{
                     self.present(alert, animated: true, completion: nil)
                     
                 }else{
+                    
+                    activityIndicator.stopAnimating()
                     
                     let alert = UIAlertController(title: "Forgot", message: "Datos incorrectos", preferredStyle: .alert)
                         
