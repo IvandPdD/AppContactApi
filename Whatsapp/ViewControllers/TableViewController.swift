@@ -104,7 +104,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
                             self.present(alert, animated: true, completion: nil)
 
                         }else{
-                            self.contacts.append(contentsOf: contactResponse)
+                            self.contacts = contactResponse
                                 
                                 //los introducimos enla tabla
                             self.tableView.reloadData()
